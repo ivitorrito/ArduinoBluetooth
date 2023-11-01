@@ -64,10 +64,8 @@ public class rxMultiple {
     public static void main(String[] args) {
         try {
             //Se inicializa la conexion con el Arduino en el puerto COM5
-            ino.arduinoRX("COM1", 9600, listener);
-        } catch (ArduinoException ex) {
-            Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SerialPortException ex) {
+            ino.arduinoRX("COM7", 9600, listener);
+        } catch (ArduinoException | SerialPortException ex) {
             Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
