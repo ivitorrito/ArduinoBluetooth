@@ -42,7 +42,7 @@ public class rxMultiple {
                      * orden en el que son enviados. Los indices 0, 1, 2 y 3
                      * indican el cual dato se debe imprimir
                      */
-                    Inicio.TxtNegro.setText(multi.getMessage(0));
+                   
                     int a =Integer.parseInt(multi.getMessage(0));
                     int b =Integer.parseInt(multi.getMessage(0));
                     int c =Integer.parseInt(multi.getMessage(0));

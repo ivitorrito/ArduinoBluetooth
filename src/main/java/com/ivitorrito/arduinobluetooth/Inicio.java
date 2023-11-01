@@ -46,7 +46,6 @@ public class Inicio extends javax.swing.JFrame {
         BtnCargar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         TxtPuerto = new javax.swing.JTextField();
-        TxtNegro = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,12 +66,15 @@ public class Inicio extends javax.swing.JFrame {
         Negro.setText("Negro");
 
         Magenta.setFont(new java.awt.Font("Dutch801 Rm BT", 1, 18)); // NOI18N
+        Magenta.setForeground(new java.awt.Color(255, 0, 204));
         Magenta.setText("Magenta");
 
         Cian.setFont(new java.awt.Font("Dutch801 Rm BT", 1, 18)); // NOI18N
+        Cian.setForeground(new java.awt.Color(0, 204, 255));
         Cian.setText("Cian");
 
         Amarillo.setFont(new java.awt.Font("Dutch801 Rm BT", 1, 18)); // NOI18N
+        Amarillo.setForeground(new java.awt.Color(255, 255, 0));
         Amarillo.setText("Amarillo");
 
         BtnCargar.setText("Cargar");
@@ -110,8 +112,6 @@ public class Inicio extends javax.swing.JFrame {
                                     .addComponent(BarAmarillo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(BarMagenta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(TxtNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(40, 40, 40))
@@ -128,9 +128,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNegro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -228,7 +226,6 @@ public class Inicio extends javax.swing.JFrame {
     private java.awt.Label Cian;
     private java.awt.Label Magenta;
     private java.awt.Label Negro;
-    public static javax.swing.JTextField TxtNegro;
     private javax.swing.JTextField TxtPuerto;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

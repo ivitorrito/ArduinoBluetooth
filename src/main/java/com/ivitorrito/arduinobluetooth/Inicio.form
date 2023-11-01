@@ -47,8 +47,6 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="TxtNegro" min="-2" pref="81" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="BarNegro" min="-2" pref="595" max="-2" attributes="0"/>
                           </Group>
@@ -72,10 +70,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BarNegro" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
-                          <Component id="TxtNegro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="BarNegro" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -185,6 +180,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dutch801 Rm BT" size="18" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="0" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Magenta"/>
       </Properties>
     </Component>
@@ -193,6 +191,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dutch801 Rm BT" size="18" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cian"/>
       </Properties>
     </Component>
@@ -200,6 +201,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dutch801 Rm BT" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Amarillo"/>
       </Properties>
@@ -224,11 +228,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="TxtPuerto">
-    </Component>
-    <Component class="javax.swing.JTextField" name="TxtNegro">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
