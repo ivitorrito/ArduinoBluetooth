@@ -1,5 +1,5 @@
-
 package com.ivitorrito.arduinobluetooth;
+
 import com.panamahitek.ArduinoException;
 import com.panamahitek.PanamaHitek_Arduino;
 import com.panamahitek.PanamaHitek_MultiMessage;
@@ -35,18 +35,28 @@ public class rxMultiple {
                 de recibir el mensaje, el cual podra ser impreso a traves del metodo
                 printMessage()
                  */
+                
                 if (multi.dataReceptionCompleted()) {
                     /**
                      * Se imprimen los datos recibidos del Arduino en el mismo
                      * orden en el que son enviados. Los indices 0, 1, 2 y 3
                      * indican el cual dato se debe imprimir
                      */
-                    System.out.println("Sensor 1: " + multi.getMessage(0));
+                    Inicio.TxtNegro.setText(multi.getMessage(0));
+                    int a =Integer.parseInt(multi.getMessage(0));
+                    int b =Integer.parseInt(multi.getMessage(0));
+                    int c =Integer.parseInt(multi.getMessage(0));
+                    int d =Integer.parseInt(multi.getMessage(0));
+                    Inicio.BarNegro.setValue(a);
+                    Inicio.BarCian.setValue(b);
+                    Inicio.BarMagenta.setValue(c);
+                    Inicio.BarAmarillo.setValue(d);
+                     System.out.println("Sensor 1: " + multi.getMessage(0));
                     System.out.println("Sensor 2: " + multi.getMessage(1));
                     System.out.println("Sensor 3: " + multi.getMessage(2));
                     System.out.println("Sensor 4: " + multi.getMessage(3));
                     System.out.println("_______________________________"); //Separador
-
+                    
                     /*
                     Cuando se ha terminado de imprimir los datos, se invoca el 
                     flushBuffer para que se pueda recibir el siguiente set de datos
@@ -61,6 +71,4 @@ public class rxMultiple {
         }
     };
 
-
 }
-    
