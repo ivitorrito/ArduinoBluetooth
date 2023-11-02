@@ -44,9 +44,9 @@ public class rxMultiple {
                      */
                    
                     int a =Integer.parseInt(multi.getMessage(0));
-                    int b =Integer.parseInt(multi.getMessage(0));
-                    int c =Integer.parseInt(multi.getMessage(0));
-                    int d =Integer.parseInt(multi.getMessage(0));
+                    int b =Integer.parseInt(multi.getMessage(1));
+                    int c =Integer.parseInt(multi.getMessage(2));
+                    int d =Integer.parseInt(multi.getMessage(3));
                     Inicio.BarNegro.setValue(a);
                     Inicio.BarCian.setValue(b);
                     Inicio.BarMagenta.setValue(c);
