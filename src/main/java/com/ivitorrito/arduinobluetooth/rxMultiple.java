@@ -63,9 +63,7 @@ public class rxMultiple {
                      */
                     multi.flushBuffer();
                 }
-            } catch (SerialPortException ex) {
-                Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ArduinoException ex) {
+            } catch (SerialPortException | ArduinoException ex) {
                 Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
