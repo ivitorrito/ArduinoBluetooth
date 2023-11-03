@@ -47,8 +47,12 @@ public class rxMultiple {
                    Inicio.txtcian.setText( multi.getMessage(1));
                    Inicio.txtmagenta.setText( multi.getMessage(2));
                     Inicio.txtamarillo.setText( multi.getMessage(3));
-                    // Inicio.BarNegro.setIndeterminate(true);
-                   // Inicio.BarNegro.setValue( a);
+                   
+                    String negro = multi.getMessage(0);
+                    double dNegro = Double.parseDouble(negro);
+                    int INegro = (int)dNegro;
+                    
+                  Inicio.BarNegro.setValue(INegro );
                    // Inicio.BarCian.setValue( b);
                    // Inicio.BarMagenta.setValue( c);
                    // Inicio.BarAmarillo.setValue( d);
