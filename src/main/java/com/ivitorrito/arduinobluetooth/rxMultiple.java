@@ -43,14 +43,15 @@ public class rxMultiple {
                      * indican el cual dato se debe imprimir
                      */
                    
-                    int a =Integer.parseInt(multi.getMessage(0));
-                    int b =Integer.parseInt(multi.getMessage(1));
-                    int c =Integer.parseInt(multi.getMessage(2));
-                    int d =Integer.parseInt(multi.getMessage(3));
-                    Inicio.BarNegro.setValue(a);
-                    Inicio.BarCian.setValue(b);
-                    Inicio.BarMagenta.setValue(c);
-                    Inicio.BarAmarillo.setValue(d);
+                 Inicio.txtnegro.setText(multi.getMessage(0));
+                   Inicio.txtcian.setText( multi.getMessage(1));
+                   Inicio.txtmagenta.setText( multi.getMessage(2));
+                    Inicio.txtamarillo.setText( multi.getMessage(3));
+                    // Inicio.BarNegro.setIndeterminate(true);
+                   // Inicio.BarNegro.setValue( a);
+                   // Inicio.BarCian.setValue( b);
+                   // Inicio.BarMagenta.setValue( c);
+                   // Inicio.BarAmarillo.setValue( d);
                      System.out.println("Sensor 1: " + multi.getMessage(0));
                     System.out.println("Sensor 2: " + multi.getMessage(1));
                     System.out.println("Sensor 3: " + multi.getMessage(2));

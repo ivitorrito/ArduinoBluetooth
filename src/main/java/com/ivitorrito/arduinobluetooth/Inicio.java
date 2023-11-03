@@ -40,6 +40,10 @@ public class Inicio extends javax.swing.JFrame {
         BtnCargar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         BoxCom = new javax.swing.JComboBox<>();
+        txtnegro = new javax.swing.JTextField();
+        txtcian = new javax.swing.JTextField();
+        txtmagenta = new javax.swing.JTextField();
+        txtamarillo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -57,6 +61,8 @@ public class Inicio extends javax.swing.JFrame {
         BarAmarillo.setStringPainted(true);
 
         BarNegro.setForeground(new java.awt.Color(0, 0, 0));
+        BarNegro.setToolTipText("");
+        BarNegro.setString("0.00%");
         BarNegro.setStringPainted(true);
 
         Negro.setFont(new java.awt.Font("Dutch801 Rm BT", 1, 18)); // NOI18N
@@ -83,10 +89,20 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Puerto");
 
-        BoxCom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9" }));
+        BoxCom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "/dev/rfcomm0", "rfcomm0", "hci0" }));
+        BoxCom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoxComActionPerformed(evt);
+            }
+        });
+
+        txtamarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtamarilloActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,12 +125,18 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(Magenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Cian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BarCian, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BarAmarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BarMagenta, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BarMagenta, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                            .addComponent(BarCian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BarNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BarAmarillo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtamarillo, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                            .addComponent(txtmagenta)
+                            .addComponent(txtcian)
+                            .addComponent(txtnegro))))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,14 +149,6 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(BarCian, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(BarMagenta, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(BarAmarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(Negro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
@@ -143,8 +157,24 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(Magenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addComponent(Amarillo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnegro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BarCian, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BarMagenta, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtmagenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BarAmarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtamarillo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
@@ -162,6 +192,14 @@ public class Inicio extends javax.swing.JFrame {
             Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BtnCargarActionPerformed
+
+    private void BoxComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxComActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoxComActionPerformed
+
+    private void txtamarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtamarilloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtamarilloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,5 +242,9 @@ public class Inicio extends javax.swing.JFrame {
     private java.awt.Label Magenta;
     private java.awt.Label Negro;
     private javax.swing.JLabel jLabel1;
+    public static javax.swing.JTextField txtamarillo;
+    public static javax.swing.JTextField txtcian;
+    public static javax.swing.JTextField txtmagenta;
+    public static javax.swing.JTextField txtnegro;
     // End of variables declaration//GEN-END:variables
 }
