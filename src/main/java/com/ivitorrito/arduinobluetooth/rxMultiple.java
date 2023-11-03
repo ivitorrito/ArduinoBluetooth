@@ -35,33 +35,41 @@ public class rxMultiple {
                 de recibir el mensaje, el cual podra ser impreso a traves del metodo
                 printMessage()
                  */
-                
+
                 if (multi.dataReceptionCompleted()) {
                     /**
                      * Se imprimen los datos recibidos del Arduino en el mismo
                      * orden en el que son enviados. Los indices 0, 1, 2 y 3
                      * indican el cual dato se debe imprimir
                      */
-                   
-                 Inicio.txtnegro.setText(multi.getMessage(0));
-                   Inicio.txtcian.setText( multi.getMessage(1));
-                   Inicio.txtmagenta.setText( multi.getMessage(2));
-                    Inicio.txtamarillo.setText( multi.getMessage(3));
-                   
+
+                    Inicio.txtnegro.setText(multi.getMessage(0));
+                    Inicio.txtcian.setText(multi.getMessage(1));
+                    Inicio.txtmagenta.setText(multi.getMessage(2));
+                    Inicio.txtamarillo.setText(multi.getMessage(3));
+
                     String negro = multi.getMessage(0);
                     double dNegro = Double.parseDouble(negro);
-                    int INegro = (int)dNegro;
-                    
-                  Inicio.BarNegro.setValue(INegro );
-                   // Inicio.BarCian.setValue( b);
-                   // Inicio.BarMagenta.setValue( c);
-                   // Inicio.BarAmarillo.setValue( d);
-                     System.out.println("Sensor 1: " + multi.getMessage(0));
-                    System.out.println("Sensor 2: " + multi.getMessage(1));
-                    System.out.println("Sensor 3: " + multi.getMessage(2));
-                    System.out.println("Sensor 4: " + multi.getMessage(3));
-                    System.out.println("_______________________________"); //Separador
-                    
+                    int INegro = (int) dNegro;
+
+                    String cian = multi.getMessage(1);
+                    double dCian = Double.parseDouble(cian);
+                    int ICian = (int) dCian;
+
+                    String magenta = multi.getMessage(2);
+                    double dMagenta = Double.parseDouble(magenta);
+                    int IMagenta = (int) dMagenta;
+
+                    String amarillo = multi.getMessage(3);
+                    double dAmarillo = Double.parseDouble(amarillo);
+                    int IAmarillo = (int) dAmarillo;
+
+                    Inicio.BarNegro.setValue(INegro);
+                    Inicio.BarCian.setValue(ICian);
+                    Inicio.BarMagenta.setValue(IMagenta);
+                    Inicio.BarAmarillo.setValue(IAmarillo);
+                   
+
                     /*
                     Cuando se ha terminado de imprimir los datos, se invoca el 
                     flushBuffer para que se pueda recibir el siguiente set de datos
