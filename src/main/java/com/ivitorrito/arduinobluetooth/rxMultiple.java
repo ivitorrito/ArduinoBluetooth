@@ -68,7 +68,9 @@ public class rxMultiple {
                     Inicio.BarCian.setValue(ICian);
                     Inicio.BarMagenta.setValue(IMagenta);
                     Inicio.BarAmarillo.setValue(IAmarillo);
-                   
+                   if(negro == "350"){
+                   Inicio.BoteNegro.setText("1");
+                   }
 
                     /*
                     Cuando se ha terminado de imprimir los datos, se invoca el 
@@ -76,6 +78,8 @@ public class rxMultiple {
                      */
                     multi.flushBuffer();
                 }
+               
+               
             } catch (SerialPortException | ArduinoException ex) {
                 Logger.getLogger(rxMultiple.class.getName()).log(Level.SEVERE, null, ex);
             }
