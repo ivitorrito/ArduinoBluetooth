@@ -35,8 +35,8 @@
        
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <exec.mainClass>com.ivitorrito.arduinobluetooth.Inicio</exec.mainClass>
     </properties>
     <build>
@@ -44,7 +44,7 @@
             <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-shade-plugin</artifactId>
-    <version>1.3.1</version>
+    <version>3.2.1</version>
     <executions>
         <execution>
             <phase>package</phase>
@@ -52,6 +52,9 @@
                 <goal>shade</goal>
             </goals>
             <configuration>
+                
+     
+    
                 <minimizeJar>true</minimizeJar>
                 <transformers>
                     <!-- This bit sets the main class for the executable jar as you otherwise -->
@@ -70,5 +73,5 @@
 </plugin>
         </plugins>
     </build>
-
+    <name>Inicio</name>
 </project>

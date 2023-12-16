@@ -11,11 +11,11 @@
             </goals>
             <properties>
                 <exec.vmArgs></exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-classpath %classpath com.ivitorrito.arduinobluetooth.Inicio</exec.args>
                 <exec.appArgs></exec.appArgs>
-                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.mainClass>com.ivitorrito.arduinobluetooth.Inicio</exec.mainClass>
                 <exec.executable>java</exec.executable>
-                <exec.workingdir>C:\Users\ivan\Documents\NetBeansProjects\ArduinoBluetooth1\src</exec.workingdir>
+                <exec.workingdir></exec.workingdir>
             </properties>
         </action>
         <action>
@@ -29,12 +29,12 @@
             </goals>
             <properties>
                 <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath com.ivitorrito.arduinobluetooth.Inicio</exec.args>
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
-                <exec.workingdir>C:\Users\ivan\Documents\NetBeansProjects\ArduinoBluetooth1\src</exec.workingdir>
+                <exec.workingdir></exec.workingdir>
             </properties>
         </action>
         <action>
@@ -48,11 +48,31 @@
             </goals>
             <properties>
                 <exec.vmArgs></exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-classpath %classpath com.ivitorrito.arduinobluetooth.Inicio</exec.args>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.appArgs></exec.appArgs>
-                <exec.workingdir>C:\Users\ivan\Documents\NetBeansProjects\ArduinoBluetooth1\src</exec.workingdir>
+                <exec.workingdir></exec.workingdir>
             </properties>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>javafx:run</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>clean</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>javafx:run</goal>
+            </goals>
         </action>
     </actions>

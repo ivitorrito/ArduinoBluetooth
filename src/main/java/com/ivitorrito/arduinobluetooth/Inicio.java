@@ -50,19 +50,24 @@ public class Inicio extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImages(null);
         setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(1024, 728));
 
         BarCian.setForeground(new java.awt.Color(0, 153, 255));
+        BarCian.setMaximum(350);
         BarCian.setStringPainted(true);
 
         BarMagenta.setForeground(new java.awt.Color(255, 0, 255));
+        BarMagenta.setMaximum(350);
         BarMagenta.setStringPainted(true);
 
         BarAmarillo.setForeground(new java.awt.Color(255, 255, 0));
+        BarAmarillo.setMaximum(350);
         BarAmarillo.setStringPainted(true);
 
         BarNegro.setForeground(new java.awt.Color(0, 0, 0));
+        BarNegro.setMaximum(350);
         BarNegro.setToolTipText("");
-        BarNegro.setString("0.00%");
+        BarNegro.setString("0%");
         BarNegro.setStringPainted(true);
 
         Negro.setFont(new java.awt.Font("Dutch801 Rm BT", 1, 18)); // NOI18N
@@ -91,13 +96,23 @@ public class Inicio extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLabel1.setText("Puerto");
 
-        BoxCom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "/dev/rfcomm0", "rfcomm0", "hci0" }));
+        BoxCom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "/dev/rfcomm0", "hci0" }));
         BoxCom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoxComActionPerformed(evt);
             }
         });
 
+        txtnegro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        txtcian.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtcian.setForeground(new java.awt.Color(0, 204, 255));
+
+        txtmagenta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtmagenta.setForeground(new java.awt.Color(255, 0, 204));
+
+        txtamarillo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtamarillo.setForeground(new java.awt.Color(204, 204, 0));
         txtamarillo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtamarilloActionPerformed(evt);
@@ -109,14 +124,18 @@ public class Inicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(49, 49, 49)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(BoxCom, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(BtnCargar)
+                .addContainerGap(700, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(BoxCom, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(BtnCargar))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtmagenta, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -125,18 +144,19 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(Magenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Cian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BarMagenta, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
-                            .addComponent(BarCian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BarNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(BarMagenta, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
+                            .addComponent(BarCian, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BarNegro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BarAmarillo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtamarillo, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                            .addComponent(txtmagenta)
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtamarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtcian)
                             .addComponent(txtnegro))))
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +177,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(Magenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addComponent(Amarillo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(39, Short.MAX_VALUE))
+                        .addContainerGap(396, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BarNegro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)

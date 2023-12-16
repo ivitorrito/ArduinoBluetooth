@@ -43,10 +43,10 @@ public class rxMultiple {
                      * indican el cual dato se debe imprimir
                      */
 
-                    Inicio.txtnegro.setText(multi.getMessage(0));
-                    Inicio.txtcian.setText(multi.getMessage(1));
-                    Inicio.txtmagenta.setText(multi.getMessage(2));
-                    Inicio.txtamarillo.setText(multi.getMessage(3));
+                    Inicio.txtnegro.setText(multi.getMessage(0)+"Gramos");
+                    Inicio.txtcian.setText(multi.getMessage(1)+"Gramos");
+                    Inicio.txtmagenta.setText(multi.getMessage(2)+"Gramos");
+                    Inicio.txtamarillo.setText(multi.getMessage(3)+"Gramos");
 
                     String negro = multi.getMessage(0);
                     double dNegro = Double.parseDouble(negro);
